@@ -3,7 +3,7 @@ const cors = require('cors');
 const { showData } = require('./controller/repositoryController')
 
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 app.use(cors());
 app.use(express.json());
