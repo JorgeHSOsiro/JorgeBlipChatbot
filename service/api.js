@@ -18,14 +18,14 @@ const fetchPromise = (url) => {
     .then((data) => {
       const repos = data
         .filter((item) => item.language === "C#")
-        .map((reps) => {
-          return {
+        .map((reps, index) => {
+          return { [index]: {
             profile: reps.owner.avatar_url,
             repository: reps.name,
             lang: reps.language,
             desc: reps.description,
             created: reps.created_at,
-          };
+          }};
         })
         .sort(compare);
       return repos;
